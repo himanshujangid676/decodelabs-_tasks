@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PriceTracker — Compare prices across every store</title>
+<meta name="description" content="Compare product prices across Amazon, Flipkart, Meesho, Myntra and brand stores in one place.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to results</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="#" aria-label="PriceTracker home">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28"><path d="M4 22 L12 12 L18 17 L28 6" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="28" cy="6" r="3" fill="currentColor"/></svg>
+      </span>
+      PriceTracker
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="primary-nav" id="primaryNav">
+      <a href="#main">Compare</a>
+      <a href="#watchlist">Watchlist</a>
+      <a href="#how-it-works">How it works</a>
+    </nav>
+  </div>
+</header>
+<section class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">5 stores · 1 search · 0 guesswork</p>
+    <h1>Same product. Five storefronts. One winner.</h1>
+    <p class="hero-sub">Search a product once and see it lined up side by side across Amazon, Flipkart, Meesho, Myntra and the brand's own store — cheapest first.</p>
+    <form class="search-form" role="search" id="searchForm">
+      <label class="visually-hidden" for="searchInput">Search for a product</label>
+      <input type="search" id="searchInput" name="q" placeholder="Try “headphones”, “kurta”, “air fryer”…" autocomplete="off">
+      <button type="submit">Search</button>
+    </form>
+    <div class="hero-stats">
+      <div><strong id="statProducts">0</strong><span>products tracked</span></div>
+      <div><strong>5</strong><span>stores compared</span></div>
+      <div><strong id="statSavings">₹0</strong><span>avg. savings found</span></div>
+    </div>
+  </div>
+</section>
+<div class="layout">
+  <aside class="filters" aria-labelledby="filtersHeading">
+    <h2 id="filtersHeading">Refine</h2>
+    <fieldset>
+      <legend>Category</legend>
+      <div class="chip-group" id="categoryChips">
+        <button class="chip is-active" data-category="all" type="button">All</button>
+        <button class="chip" data-category="Electronics" type="button">Electronics</button>
+        <button class="chip" data-category="Fashion" type="button">Fashion</button>
+        <button class="chip" data-category="Home" type="button">Home</button>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Sort by</legend>
+      <label class="radio-row">
+        <input type="radio" name="sort" value="savings" checked> Biggest savings
+      </label>
+      <label class="radio-row">
+        <input type="radio" name="sort" value="lowprice"> Lowest price
+      </label>
+      <label class="radio-row">
+        <input type="radio" name="sort" value="name"> Name (A–Z)
+      </label>
+    </fieldset>
+    <fieldset>
+      <legend>Only show</legend>
+      <label class="radio-row">
+        <input type="checkbox" id="onlyWatchlist"> My watchlist only
+      </label>
+    </fieldset>
+    <p class="filter-note">Prices shown are illustrative demo data, refreshed each time you reload the page.</p>
+  </aside>
+  <main id="main">
+    <div class="results-bar">
+      <h2 id="resultsHeading">All products</h2>
+      <p id="resultsCount" aria-live="polite">Loading…</p>
+    </div>
+    <div class="product-grid" id="productGrid" aria-live="polite"></div>
+    <p class="empty-state" id="emptyState" hidden>No products match that search. Try “shoes”, “speaker” or clear the filter.</p>
+  </main>
+</div>
+<section class="how-it-works" id="how-it-works">
+  <h2>How the comparison works</h2>
+  <ol class="steps">
+    <li>
+      <span class="step-num">1</span>
+      <h3>Search once</h3>
+      <p>Type a product and we line up every store that sells it.</p>
+    </li>
+    <li>
+      <span class="step-num">2</span>
+      <h3>Read the price race</h3>
+      <p>Each store gets a bar sized to its price — shortest bar wins.</p>
+    </li>
+    <li>
+      <span class="step-num">3</span>
+      <h3>Track and revisit</h3>
+      <p>Star a product to keep it in your watchlist for this session.</p>
+    </li>
+  </ol>
+</section>
+<section class="watchlist-section" id="watchlist" aria-labelledby="watchlistHeading">
+  <h2 id="watchlistHeading">Your watchlist</h2>
+  <div class="watchlist-grid" id="watchlistGrid"></div>
+  <p class="empty-state" id="watchlistEmpty">Star a product above to pin it here for quick access.</p>
+</section>
+<footer class="site-footer">
+  <p>PriceTracker — a Project 1 build for the DecodeLabs Full Stack Internship. Semantic HTML, CSS Grid/Flexbox, vanilla JS. No frameworks.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
