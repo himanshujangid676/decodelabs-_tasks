@@ -8,3 +8,8 @@ A responsive, mobile-first web page that compares a product's price across Amazo
 Overview
 
 PriceTracker lets a shopper search for a product once and see it lined up side by side across five stores, cheapest first, with the savings called out. This project covers the interface phase of the internship: a flexible, accessible frontend built before any backend is wired in.
+
+pricetracker-frontend/
+├── index.html      # page structure and content
+├── style.css       # design tokens, layout, responsive breakpoints
+└── script.js       # product data, rendering, search/filter/sort, watchlist
